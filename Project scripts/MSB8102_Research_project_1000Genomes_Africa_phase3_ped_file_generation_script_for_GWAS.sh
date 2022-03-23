@@ -70,13 +70,13 @@ mv afr_phase3_maf_unrelatedunrelated_toberemoved.txt afr_phase3_maf_unrelated_to
 #split PLINK files by chromosomes for easier imputations in case of limited computational space
 
 for chr in {1..22}; do \
-plink --bfile afr_phase3_filtered --chr $chr --make-bed --out afr_phase3_filtered${chr}; \
+./plink --bfile afr_phase3_filtered --chr $chr --make-bed --out afr_phase3_filtered${chr}; \
 done
 
 #generate ped file
 
 for i in {1..22}; do \
- ./plink --bfile afr_phase3_filtered$i --recode --tab --out afr_phase3_$i \
+./plink --bfile afr_phase3_filtered$i --recode --tab --out afr_phase3_$i \
 done
 
 end=$SECONDS
